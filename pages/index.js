@@ -64,6 +64,10 @@ export default function Home() {
     <>
       <Head>
         <title>Jacob’s Ball</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no"
+        />
       </Head>
       <main style={{ WebkitTapHighlightColor: "transparent" }}>
         <motion.div
