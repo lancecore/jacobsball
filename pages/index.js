@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { useState, useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import useSound from "use-sound";
@@ -9,7 +10,7 @@ export default function Home() {
   const [scaleRate, setScaleRate] = useState(1.3);
   const [play] = useSound(pitchUrl, {
     playbackRate,
-    volume: 0.1,
+    volume: 0.5,
     interrupt: false,
   });
   const aniVars = {
@@ -60,15 +61,20 @@ export default function Home() {
   }
 
   return (
-    <main>
-      <motion.div
-        className="ball"
-        layout
-        animate={controls}
-        onTap={handleClick}
-      >
-        {theFace}
-      </motion.div>
-    </main>
+    <>
+      <Head>
+        <title>Jacob’s Ball</title>
+      </Head>
+      <main style={{ WebkitTapHighlightColor: "transparent" }}>
+        <motion.div
+          className="ball"
+          layout
+          animate={controls}
+          onTap={handleClick}
+        >
+          {theFace}
+        </motion.div>
+      </main>
+    </>
   );
 }
